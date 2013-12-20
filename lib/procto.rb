@@ -6,7 +6,7 @@ class Procto < Module
 
   private_class_method :new
 
-  # Return a custom module that calls a method named +name+
+  # Return a module that turns the host into a method object
   #
   # @example without a name
   #
@@ -40,19 +40,19 @@ class Procto < Module
   #
   #   Printer.call('world') # => "Hello world"
   #
-  # @param [Symbol, String] name
+  # @param [#to_sym] name
   #   the name of the instance method to call
   #
   # @return [Procto]
   #
   # @api public
   def self.call(name = DEFAULT_NAME)
-    new(name)
+    new(name.to_sym)
   end
 
   # Initialize a new instance
   #
-  # @param [Symbol, String] name
+  # @param [Symbol] name
   #   the name of the instance method to call
   #
   # @return [undefined]
