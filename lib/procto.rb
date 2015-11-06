@@ -59,7 +59,7 @@ class Procto < Module
   #
   # @api private
   def initialize(name)
-    @block = ->(*args) { new(*args).public_send(name) }
+    @block = lambda { |*args| new(*args).public_send(name) }
   end
 
   private

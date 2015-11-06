@@ -35,7 +35,7 @@ describe Procto, '.call' do
   context 'with a name' do
     include_context 'procto'
 
-    let(:name) { double('name', to_sym: :print) }
+    let(:name) { double('name', :to_sym => :print) }
 
     let(:klass) do
       method_name = name
