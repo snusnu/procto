@@ -25,7 +25,7 @@ FeatureEnvy:
   enabled: true
   exclude: []
 IrresponsibleModule:
-  enabled: true
+  enabled: false
   exclude: []
 LongParameterList:
   enabled: true

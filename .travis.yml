@@ -3,8 +3,7 @@ before_install: gem install bundler
 bundler_args: --without yard guard benchmarks
 script: "bundle exec rake ci"
 rvm:
-  - 1.9.3
-  - 2.0.0
+  - 2.3.0
   - ruby-head
   - rbx-19mode
 matrix:
@@ -15,3 +14,5 @@ matrix:
       env: JRUBY_OPTS="$JRUBY_OPTS --debug"
   allow_failures:
     - rvm: rbx-19mode
+    - rvm: jruby-19mode
+    - rvm: jruby-head

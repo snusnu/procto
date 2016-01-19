@@ -1,9 +1,9 @@
 AllCops:
-  Includes:
+  Include:
     - '**/*.rake'
     - 'Gemfile'
     - 'Gemfile.devtools'
-  Excludes:
+  Exclude:
     - '**/vendor/**'
     - '**/benchmarks/**'
 
@@ -57,10 +57,6 @@ ConstantName:
 TrivialAccessors:
   Enabled: false
 
-# Do not prefer do/end over {} for multiline blocks
-Blocks:
-  Enabled: false
-
 # Do not favor aligned parameters in method calls
 AlignParameters:
   Enabled: false
@@ -76,3 +72,7 @@ Lambda:
 
 AndOr:
   Enabled: false # we agree to use and/or for control flow
+
+# Allow code to be aligned more nicely
+SingleSpaceBeforeFirstArg:
+  Enabled: false
