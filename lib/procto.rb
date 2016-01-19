@@ -76,5 +76,37 @@ class Procto < Module
     host.instance_exec(@block) do |block|
       define_singleton_method(:call, &block)
     end
+
+    host.extend(ClassMethods)
   end
+
+  # Procto module for adding .to_proc to host class
+  module ClassMethods
+    # Return the `call` singleton method as a lambda
+    #
+    # @example using a class as a proc
+    #
+    #   class Shouter
+    #     include Procto.call
+    #
+    #     def initialize(text)
+    #       @text = text
+    #     end
+    #
+    #     def call
+    #       "#{@text.upcase}!"
+    #     end
+    #   end
+    #
+    #   Shouter.to_proc.call('hello') # => "HELLO!"
+    #   %w[foo bar].map(&Shouter)     # => ["FOO!", "BAR!"]
+    #
+    # @return [Proc]
+    #
+    # @api public
+    def to_proc
+      public_method(:call).to_proc
+    end
+  end
+  private_constant(:ClassMethods)
 end # Procto
