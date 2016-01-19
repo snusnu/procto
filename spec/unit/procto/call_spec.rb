@@ -2,15 +2,6 @@
 
 require 'spec_helper'
 
-shared_context 'procto' do
-  let(:text)     { 'world' }
-  let(:expected) { "Hello #{text}" }
-
-  it 'returns the correct value' do
-    expect(subject).to eql(expected)
-  end
-end
-
 describe Procto, '.call' do
   subject { klass.call(text) }
 
