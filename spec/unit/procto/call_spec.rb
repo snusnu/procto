@@ -3,8 +3,6 @@
 require 'spec_helper'
 
 shared_context 'procto' do
-  subject { klass.call(text) }
-
   let(:text)     { 'world' }
   let(:expected) { "Hello #{text}" }
 
@@ -14,6 +12,8 @@ shared_context 'procto' do
 end
 
 describe Procto, '.call' do
+  subject { klass.call(text) }
+
   context 'with no name' do
     include_context 'procto'
 
