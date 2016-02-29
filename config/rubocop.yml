@@ -74,5 +74,5 @@ AndOr:
   Enabled: false # we agree to use and/or for control flow
 
 # Allow code to be aligned more nicely
-SingleSpaceBeforeFirstArg:
+SpaceBeforeFirstArg:
   Enabled: false
