@@ -9,7 +9,7 @@ AllCops:
 
 # Avoid parameter lists longer than five parameters.
 ParameterLists:
-  Max: 1
+  Max: 5
   CountKeywordArgs: true
 
 # Avoid more than `Max` levels of nesting.
