@@ -78,10 +78,8 @@ class Procto < Module
       define_singleton_method(:call, &block)
     end
 
-    if @name
-      host.instance_exec(@block, @name) do |block, method_name|
-        define_singleton_method(method_name, &block)
-      end
+    host.instance_exec(@block, @name) do |block, method_name|
+      define_singleton_method(method_name, &block) if method_name
     end
 
     host.extend(ClassMethods)
