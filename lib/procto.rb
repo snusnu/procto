@@ -59,6 +59,7 @@ class Procto < Module
   #
   # @api private
   def initialize(name)
+    @name = name
     @block = ->(*args) { new(*args).public_send(name) }
   end
 
@@ -75,6 +76,12 @@ class Procto < Module
   def included(host)
     host.instance_exec(@block) do |block|
       define_singleton_method(:call, &block)
+    end
+
+    if @name
+      host.instance_exec(@block, @name) do |block, method_name|
+        define_singleton_method(method_name, &block)
+      end
     end
 
     host.extend(ClassMethods)
