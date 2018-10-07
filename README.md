@@ -20,6 +20,8 @@ require 'procto'
 class Greeter
   include Procto.call
 
+  attr_reader :text
+
   def initialize(text)
     @text = text
   end
@@ -33,6 +35,8 @@ Greeter.call('world') # => "Hello world"
 
 class Printer
   include Procto.call(:print)
+
+  attr_reader :text
 
   def initialize(text)
     @text = text
