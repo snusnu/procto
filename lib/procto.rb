@@ -13,14 +13,12 @@ class Procto < Module
   #   class Greeter
   #     include Procto.call
   #
-  #     attr_reader :text
-  #
   #     def initialize(text)
   #       @text = text
   #     end
   #
   #     def call
-  #       "Hello #{text}"
+  #       "Hello #{@text}"
   #     end
   #   end
   #
@@ -31,14 +29,12 @@ class Procto < Module
   #   class Printer
   #     include Procto.call(:print)
   #
-  #     attr_reader :text
-  #
   #     def initialize(text)
   #       @text = text
   #     end
   #
   #     def print
-  #       "Hello #{text}"
+  #       "Hello #{@text}"
   #     end
   #   end
   #
