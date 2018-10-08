@@ -18,7 +18,7 @@ class Procto < Module
   #     end
   #
   #     def call
-  #       "Hello #{text}"
+  #       "Hello #{@text}"
   #     end
   #   end
   #
@@ -34,7 +34,7 @@ class Procto < Module
   #     end
   #
   #     def print
-  #       "Hello #{text}"
+  #       "Hello #{@text}"
   #     end
   #   end
   #

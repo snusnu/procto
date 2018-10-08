@@ -25,7 +25,7 @@ class Greeter
   end
 
   def call
-    "Hello #{text}"
+    "Hello #{@text}"
   end
 end
 
@@ -39,7 +39,7 @@ class Printer
   end
 
   def print
-    "Hello #{text}"
+    "Hello #{@text}"
   end
 end
 
